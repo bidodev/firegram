@@ -1,5 +1,5 @@
 // Your web app's Firebase configuration
-import * as firebase from 'firebase/app';
+import firebase from 'firebase/app';
 import 'firebase/storage';
 import 'firebase/firestore';
 
@@ -11,10 +11,12 @@ var firebaseConfig = {
   messagingSenderId: '1096951071478',
   appId: '1:1096951071478:web:22623cf0db85c2b53522d7',
 };
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
 const projectStorage = firebase.storage();
 const projectFirestore = firebase.firestore();
+const timestamp = firebase.firestore.FieldValue.serverTimestamp;
 
-export { projectFirestore, projectStorage };
+export { projectStorage, projectFirestore, timestamp };
